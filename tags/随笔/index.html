@@ -6,21 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//xiaoshenmao.github.io/blog">
-  <title>iOS设备左下角出现Appicon | 向宇辉</title>
+  <title>Tag: 随笔 | 向宇辉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近发现我设备锁屏后，按Home屏幕变亮的时候，左下角出现一个灰色的Appicon （应用图标），关于这个应用图标的出现做了一些调研，下面是应用图标出现的几种情况。 图一 iOS 系统自带的 App icon , 图二 第三方 App icon , 图三 通过 iBeacon 信号激活的 demo icon  结论：有三种情况导致设备的左下角出现灰色的 App icon1、AppStore根据地点">
-<meta name="keywords" content="iOS">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS设备左下角出现Appicon">
-<meta property="og:url" content="//xiaoshenmao.github.io/blog/2016/09/23/2016-09-23-iOSLowerLeftAppicon/index.html">
+  <meta name="description" content="欢迎来到我的个人站~">
+<meta name="keywords" content="iOS,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="向宇辉">
+<meta property="og:url" content="//xiaoshenmao.github.io/blog/tags/随笔/index.html">
 <meta property="og:site_name" content="向宇辉">
-<meta property="og:description" content="最近发现我设备锁屏后，按Home屏幕变亮的时候，左下角出现一个灰色的Appicon （应用图标），关于这个应用图标的出现做了一些调研，下面是应用图标出现的几种情况。 图一 iOS 系统自带的 App icon , 图二 第三方 App icon , 图三 通过 iBeacon 信号激活的 demo icon  结论：有三种情况导致设备的左下角出现灰色的 App icon1、AppStore根据地点">
-<meta property="og:image" content="//xiaoshenmao.github.io/blog/assets/posts/icon/image01.png">
-<meta property="og:updated_time" content="2017-08-22T16:57:58.000Z">
+<meta property="og:description" content="欢迎来到我的个人站~">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS设备左下角出现Appicon">
-<meta name="twitter:description" content="最近发现我设备锁屏后，按Home屏幕变亮的时候，左下角出现一个灰色的Appicon （应用图标），关于这个应用图标的出现做了一些调研，下面是应用图标出现的几种情况。 图一 iOS 系统自带的 App icon , 图二 第三方 App icon , 图三 通过 iBeacon 信号激活的 demo icon  结论：有三种情况导致设备的左下角出现灰色的 App icon1、AppStore根据地点">
-<meta name="twitter:image" content="//xiaoshenmao.github.io/blog/assets/posts/icon/image01.png">
+<meta name="twitter:title" content="向宇辉">
+<meta name="twitter:description" content="欢迎来到我的个人站~">
   
   
     <link rel="icon" href="/blog/favicon.png">
@@ -150,216 +147,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016-09-23-iOSLowerLeftAppicon" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      iOS设备左下角出现Appicon
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/blog/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/blog/2017/08/18/2017-08-18-hexoInitYourBlog/" class="archive-article-date">
+  	<time datetime="2017-08-18T06:38:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2017/08/18/2017-08-18-hexoInitYourBlog/">hexo-个人博客的搭建</a>
     </h1>
   
 
-        
-        <a href="/blog/2016/09/23/2016-09-23-iOSLowerLeftAppicon/" class="archive-article-date">
-  	<time datetime="2016-09-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近发现我设备锁屏后，按Home屏幕变亮的时候，左下角出现一个灰色的Appicon （应用图标），关于这个应用图标的出现做了一些调研，下面是应用图标出现的几种情况。</p>
-<p>图一 iOS 系统自带的 App icon , 图二 第三方 App icon , 图三 通过 iBeacon 信号激活的 demo icon</p>
-<p><img src="/blog/assets/posts/icon/image01.png" alt=""></p>
-<h2 id="结论：有三种情况导致设备的左下角出现灰色的-App-icon"><a href="#结论：有三种情况导致设备的左下角出现灰色的-App-icon" class="headerlink" title="结论：有三种情况导致设备的左下角出现灰色的 App icon"></a>结论：有三种情况导致设备的左下角出现灰色的 App icon</h2><h3 id="1、AppStore根据地点对App-推荐"><a href="#1、AppStore根据地点对App-推荐" class="headerlink" title="1、AppStore根据地点对App 推荐"></a>1、AppStore根据地点对App 推荐</h3><ul>
-<li><strong>简介</strong> <ul>
-<li>iOS 8会基于你的位置在锁屏界面上展示一个app快捷打开方式。比如你正在星巴克附近，那iOS 8会在锁屏界面上展示星巴克应用的icon，方便你快速打开。一些用户也表示会在锁屏界面收到app推荐，比如你在Costco和Apple Store附近，即便你之前没有安装过这些应用。   </li>
-</ul>
-</li>
-</ul>
-<h3 id="2、App实现了handoff功能"><a href="#2、App实现了handoff功能" class="headerlink" title="2、App实现了handoff功能"></a>2、App实现了handoff功能</h3><ul>
-<li><strong><a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html" target="_blank" rel="external">handoff简介</a>：</strong><ul>
-<li><code>OS X 10.10 Yosemite</code> 新增了一个酷炫的功能 “Hand Off”，打开这个功能之后，用户可以在 Mac 上对 iPad 和 iPhone 进行操作，比如能够编写 iPhone 上未完成的邮件，并且可以在Mac上打开 iPhone 的热点等等， Mac 的 Hand Off 功能只能识别 Mac 周围的 iPhone 手机。      </li>
-</ul>
-</li>
-<li><strong>handoff有几个要求：</strong><ul>
-<li>1 两台设备都要登录同一个 iCloud 账号。</li>
-<li>2 两台设备上的app有相同的 TeamID 。</li>
-<li>3 锁屏（或dock）设备上的app支持的 <code>NSUserActivityTypes</code> 包含活动设备上的app当前的UserActivityType。<a id="more"></a> 
-<h3 id="3、App内有iBeacon信号接收功能，App被iBeacon信号唤醒"><a href="#3、App内有iBeacon信号接收功能，App被iBeacon信号唤醒" class="headerlink" title="3、App内有iBeacon信号接收功能，App被iBeacon信号唤醒"></a>3、App内有iBeacon信号接收功能，App被iBeacon信号唤醒</h3></li>
-</ul>
-</li>
-<li><strong><a href="https://developer.apple.com/ibeacon/" target="_blank" rel="external">iBeacon简介</a></strong>：<ul>
-<li>是苹果公司2013年9月发布的移动设备用OS（iOS7）上配备的新功能。工作原理类似之前的蓝牙技术，由 <code>iBeacon</code> 发射信号，iOS设备定位接受，反馈信号。根据这项简单的定位技术可以做出许多的相应技术应用,如：<code>室内定位</code> 、<code>商品推荐</code> 、<code>微信摇一摇</code> 等。</li>
-</ul>
-</li>
-<li><strong>App icon出现的原因</strong>：<ul>
-<li><code>iBeacon</code> 具备后台定位的能力，只要用户把蓝牙(4.0或以后)开启 和 允许 App 访问位置信息。在有被 App 检测的 <code>iBeacon</code> 出现时，如果设备是锁屏状态，设备的左下角就会出现该 App 的 icon 。</li>
-</ul>
-</li>
-</ul>
-<p>参考链接:<br><a href="http://stackoverflow.com/questions/26082414/make-app-appear-as-ios-8-suggested-app-at-lockscreen/26676020#26676020" target="_blank" rel="external">Make app appear as iOS 8 Suggested App at lockscreen</a><br><a href="http://stackoverflow.com/questions/25897219/can-i-get-my-ios-app-to-appear-on-the-lower-left-corner-of-the-lock-screen/25898890#25898890" target="_blank" rel="external">Can I get my iOS app to appear on the lower left corner of the lock screen?</a><br><a href="https://www.zhihu.com/question/26653964" target="_blank" rel="external">为什么 iOS 8 锁屏界面的左下角经常会出现某个应用的小图标？</a><br><a href="https://www.v2ex.com/t/142320" target="_blank" rel="external">关于 IOS8 锁屏左下方出现的 APP ICON</a> </p>
-<p><br></p>
-<p>转载请注明：<a href="http://xiaoshenmao.github.io/blog" target="_blank" rel="external">xiaoshenmao的微博</a> » <a href="https://xiaoshenmao.github.io/blog/2016/09/23/2016-09-23-iOSLowerLeftAppicon/" target="_blank" rel="external">点击阅读原文</a>     </p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/blog/assets/img/alipayimg.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/blog/assets/img/weipayimg.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://xiaoshenmao.github.io/blog/2016/09/23/2016-09-23-iOSLowerLeftAppicon/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/blog/2016/10/25/2016-10-25-Xcode8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Xcode 8 使用笔记
-        
-      </div>
-    </a>
   
   
-    <a href="/blog/2016/08/04/2016-08-04-PythonTestAutomationiOS/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Python自动化测试iOS项目</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -383,9 +232,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
