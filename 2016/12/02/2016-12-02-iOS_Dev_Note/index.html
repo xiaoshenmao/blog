@@ -15,7 +15,7 @@
 <meta property="og:url" content="//xiaoshenmao.github.io/blog/2016/12/02/2016-12-02-iOS_Dev_Note/index.html">
 <meta property="og:site_name" content="向宇辉">
 <meta property="og:description" content="NSKeyedArchiver 自定义对象写文件如果存储的对象类名有变动，则需要设置clasName, 方法为：“setClassName:forClass:”使用 NSKeyedArchiver 进行数据持久化时, 系统会默认使用类名去建表，如果类名变了，那么使用新的类名肯定是从本地获取不到表的，代码执行崩溃。所以需要在 NSKeyedArchiver 或者 NSKeyedUnarchiver">
-<meta property="og:updated_time" content="2017-08-22T09:43:28.000Z">
+<meta property="og:updated_time" content="2017-08-22T16:53:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发中的小问题记录">
 <meta name="twitter:description" content="NSKeyedArchiver 自定义对象写文件如果存储的对象类名有变动，则需要设置clasName, 方法为：“setClassName:forClass:”使用 NSKeyedArchiver 进行数据持久化时, 系统会默认使用类名去建表，如果类名变了，那么使用新的类名肯定是从本地获取不到表的，代码执行崩溃。所以需要在 NSKeyedArchiver 或者 NSKeyedUnarchiver">
@@ -178,7 +178,7 @@
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">设置 navigationItem.leftBarButtonItem 之后，左滑返回手势就会失效。设置一下 <span class="built_in">UIGestureRecognizerDelegate</span> 代理即可：</div><div class="line"></div><div class="line"><span class="keyword">self</span>.navigationController.interactivePopGestureRecognizer.delegate = <span class="keyword">self</span>;</div></pre></td></tr></table></figure>
 <p>3、让 TableView的 下拉 和 上拉 显示不一样的背景颜色：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">给 <span class="selector-tag">TableView</span> 上加一个 <span class="selector-tag">View</span>，<span class="selector-tag">View</span> 的 <span class="selector-tag">Frema</span>：</div><div class="line"><span class="selector-tag">CGRectMake</span>(0, <span class="selector-tag">-self</span><span class="selector-class">.view</span><span class="selector-class">.bounds</span><span class="selector-class">.size</span><span class="selector-class">.height</span>, <span class="selector-tag">self</span><span class="selector-class">.view</span><span class="selector-class">.bounds</span><span class="selector-class">.size</span><span class="selector-class">.width</span>, <span class="selector-tag">self</span><span class="selector-class">.view</span><span class="selector-class">.bounds</span><span class="selector-class">.size</span><span class="selector-class">.height</span> + 2)，</div><div class="line">给变<span class="selector-tag">View</span>的背景颜色就可以了。</div></pre></td></tr></table></figure>
-<p><br><br>转载请注明：<a href="http://xiaoshenmao.github.io/blog" target="_blank" rel="external">xiaoshenmao的博客</a> » <a href="http://xiaoshenmao.github.io/blog/2016/12/iOS_Dev_Note/" target="_blank" rel="external">iOS开发中的小问题记录</a>  </p>
+<p><br><br>转载请注明：<a href="http://xiaoshenmao.github.io/blog" target="_blank" rel="external">xiaoshenmao的博客</a> » <a href="http://xiaoshenmao.github.io/blog/2016/12/02/2016/12/iOS_Dev_Note/" target="_blank" rel="external">iOS开发中的小问题记录</a>  </p>
 
       
 
