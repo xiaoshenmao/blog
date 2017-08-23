@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//xiaoshenmao.github.io/blog">
-  <title>iOS开发中的小问题记录 | 向宇辉</title>
+  <title>Tag: 心情 | 向宇辉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="NSKeyedArchiver 自定义对象写文件如果存储的对象类名有变动，则需要设置clasName, 方法为：“setClassName:forClass:”使用 NSKeyedArchiver 进行数据持久化时, 系统会默认使用类名去建表，如果类名变了，那么使用新的类名肯定是从本地获取不到表的，代码执行崩溃。所以需要在 NSKeyedArchiver 或者 NSKeyedUnarchiver">
-<meta name="keywords" content="iOS">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS开发中的小问题记录">
-<meta property="og:url" content="//xiaoshenmao.github.io/blog/2016/12/02/2016-12-02-iOS_Dev_Note/index.html">
+  <meta name="description" content="欢迎来到我的个人站~">
+<meta name="keywords" content="iOS,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="向宇辉">
+<meta property="og:url" content="//xiaoshenmao.github.io/blog/tags/心情/index.html">
 <meta property="og:site_name" content="向宇辉">
-<meta property="og:description" content="NSKeyedArchiver 自定义对象写文件如果存储的对象类名有变动，则需要设置clasName, 方法为：“setClassName:forClass:”使用 NSKeyedArchiver 进行数据持久化时, 系统会默认使用类名去建表，如果类名变了，那么使用新的类名肯定是从本地获取不到表的，代码执行崩溃。所以需要在 NSKeyedArchiver 或者 NSKeyedUnarchiver">
-<meta property="og:updated_time" content="2017-08-22T16:53:41.000Z">
+<meta property="og:description" content="欢迎来到我的个人站~">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS开发中的小问题记录">
-<meta name="twitter:description" content="NSKeyedArchiver 自定义对象写文件如果存储的对象类名有变动，则需要设置clasName, 方法为：“setClassName:forClass:”使用 NSKeyedArchiver 进行数据持久化时, 系统会默认使用类名去建表，如果类名变了，那么使用新的类名肯定是从本地获取不到表的，代码执行崩溃。所以需要在 NSKeyedArchiver 或者 NSKeyedUnarchiver">
+<meta name="twitter:title" content="向宇辉">
+<meta name="twitter:description" content="欢迎来到我的个人站~">
   
   
     <link rel="icon" href="/blog/favicon.png">
@@ -148,194 +147,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016-12-02-iOS_Dev_Note" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      iOS开发中的小问题记录
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/blog/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/blog/2017/08/23/2017-08-23TyphoonDay/" class="archive-article-date">
+  	<time datetime="2017-08-23T06:09:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2017/08/23/2017-08-23TyphoonDay/">随笔 又记台风天8.21-8.27</a>
     </h1>
   
 
-        
-        <a href="/blog/2016/12/02/2016-12-02-iOS_Dev_Note/" class="archive-article-date">
-  	<time datetime="2016-12-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="NSKeyedArchiver-自定义对象写文件"><a href="#NSKeyedArchiver-自定义对象写文件" class="headerlink" title="NSKeyedArchiver 自定义对象写文件"></a>NSKeyedArchiver 自定义对象写文件</h3><p>如果存储的对象类名有变动，则需要设置clasName, 方法为：“setClassName:forClass:”<br>使用 NSKeyedArchiver 进行数据持久化时, 系统会默认使用类名去建表，如果类名变了，那么使用新的类名肯定是从本地获取不到表的，代码执行崩溃。<br>所以需要在 NSKeyedArchiver 或者 NSKeyedUnarchiver 时使用 “setClassName:forClass:” 指定类名。 </p>
-<h3 id="断点配置：【Generate-Debug-Symbols】"><a href="#断点配置：【Generate-Debug-Symbols】" class="headerlink" title="断点配置：【Generate Debug Symbols】"></a>断点配置：【Generate Debug Symbols】</h3><p>描述: 用来控制断点是否生效,关闭此功能，打包 <code>.ipa</code> 时，包体积会小很多。<br>配置路径:【project/TARGETS/Build Settings/Apple LLVM7.1 - Code Genneration/Generate Debug Symbols】    </p>
-<h3 id="捕获全局异常：【All-Exception】"><a href="#捕获全局异常：【All-Exception】" class="headerlink" title="捕获全局异常：【All Exception】"></a>捕获全局异常：【All Exception】</h3><p>描述: 用来捕捉整个项目在 Xcode 里执行时的异常。例如：try/catch 时 catch住的异常,【All Exception】可以直接定位到具体位置。<br>配置路径: 异常捕捉(commod+7)/Xcode左下角点击+/Add Exception Breakpoint/完成(回车键)  </p>
-<a id="more"></a> 
-<h3 id="UI相关"><a href="#UI相关" class="headerlink" title="UI相关"></a>UI相关</h3><p>1、设置状态栏颜色：</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">info.plist 添加 View controller-<span class="keyword">based </span>status <span class="keyword">bar </span>appearance - NO     </div><div class="line">代码里写 [[UIApplication <span class="keyword">sharedApplication] </span>setStatusBarStyle:UIStatusBarStyleLightContent]<span class="comment">; 再次运行后状态栏就会变成白色。</span></div></pre></td></tr></table></figure>
-<p>2、左滑返回手势失效了怎么办：   </p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">设置 navigationItem.leftBarButtonItem 之后，左滑返回手势就会失效。设置一下 <span class="built_in">UIGestureRecognizerDelegate</span> 代理即可：</div><div class="line"></div><div class="line"><span class="keyword">self</span>.navigationController.interactivePopGestureRecognizer.delegate = <span class="keyword">self</span>;</div></pre></td></tr></table></figure>
-<p>3、让 TableView的 下拉 和 上拉 显示不一样的背景颜色：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">给 <span class="selector-tag">TableView</span> 上加一个 <span class="selector-tag">View</span>，<span class="selector-tag">View</span> 的 <span class="selector-tag">Frema</span>：</div><div class="line"><span class="selector-tag">CGRectMake</span>(0, <span class="selector-tag">-self</span><span class="selector-class">.view</span><span class="selector-class">.bounds</span><span class="selector-class">.size</span><span class="selector-class">.height</span>, <span class="selector-tag">self</span><span class="selector-class">.view</span><span class="selector-class">.bounds</span><span class="selector-class">.size</span><span class="selector-class">.width</span>, <span class="selector-tag">self</span><span class="selector-class">.view</span><span class="selector-class">.bounds</span><span class="selector-class">.size</span><span class="selector-class">.height</span> + 2)，</div><div class="line">给变<span class="selector-tag">View</span>的背景颜色就可以了。</div></pre></td></tr></table></figure>
-<p><br><br>转载请注明：<a href="http://xiaoshenmao.github.io/blog" target="_blank" rel="external">xiaoshenmao的博客</a> » <a href="http://xiaoshenmao.github.io/blog/2016/12/02/2016/12/iOS_Dev_Note/" target="_blank" rel="external">iOS开发中的小问题记录</a>  </p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/blog/assets/img/alipayimg.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/blog/assets/img/weipayimg.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://xiaoshenmao.github.io/blog/2016/12/02/2016-12-02-iOS_Dev_Note/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/blog/2017/01/03/2017-01-03-iOS_Wifilist/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Wifi 定位原理及 iOS Wifi 列表获取
-        
-      </div>
-    </a>
   
   
-    <a href="/blog/2016/11/20/2016-11-20-neural_networks_using_TensorFlow/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用 TensorFlow 实现神经网络</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -377,9 +246,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
