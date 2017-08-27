@@ -1499,7 +1499,7 @@ send_mail(&apos;leopardpan@icloud.com&apos;,&apos;正文&apos;,&apos;标题&apos
     <link href="//xiaoshenmao.github.io/blog/2015/09/26/2015-09-26-iOS9_Note/"/>
     <id>//xiaoshenmao.github.io/blog/2015/09/26/2015-09-26-iOS9_Note/</id>
     <published>2015-09-26T10:15:06.000Z</published>
-    <updated>2017-08-22T17:02:04.000Z</updated>
+    <updated>2017-08-27T07:19:44.000Z</updated>
     
     <content type="html"><![CDATA[<p>这里将介绍下我们日常开发一些从iOS8过度到iOS9给我们带来的一些变化，及解决方法。</p>
 <h3 id="App-Transport-Security"><a href="#App-Transport-Security" class="headerlink" title="App Transport Security"></a>App Transport Security</h3><p>iOS9和OS X El Capitan的一个新特性，App Transport Security 的目地是提高Apple 操作系统的安全性以及在此操作系统上运行的任何应用的安全性。ATS是苹果针对与 NSURL这一层做的封装，iOS9后ATS默认是开启的，即网络传输需要使用HTTPS。如果想在iOS9后继续使用HTTP的话，有两条路可以走：</p>
