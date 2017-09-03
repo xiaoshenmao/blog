@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//xiaoshenmao.github.io/blog">
-  <title>iOS动态更新 | 向宇辉</title>
+  <title>Archives: 2017/9 | 向宇辉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iOS 使用Runtime 实现动态更新">
-<meta name="keywords" content="iOS">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS动态更新">
-<meta property="og:url" content="//xiaoshenmao.github.io/blog/2016/01/09/2016-01-09-iOS_OTA/index.html">
+  <meta name="description" content="欢迎来到我的个人站~">
+<meta name="keywords" content="iOS,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="向宇辉">
+<meta property="og:url" content="//xiaoshenmao.github.io/blog/archives/2017/09/index.html">
 <meta property="og:site_name" content="向宇辉">
-<meta property="og:description" content="iOS 使用Runtime 实现动态更新">
-<meta property="og:updated_time" content="2017-08-22T17:01:45.000Z">
+<meta property="og:description" content="欢迎来到我的个人站~">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS动态更新">
-<meta name="twitter:description" content="iOS 使用Runtime 实现动态更新">
+<meta name="twitter:title" content="向宇辉">
+<meta name="twitter:description" content="欢迎来到我的个人站~">
   
   
     <link rel="icon" href="/blog/favicon.png">
@@ -172,258 +171,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016-01-09-iOS_OTA" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      iOS动态更新
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/blog/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/blog/2017/09/03/2017-09-03-homeTicket/" class="archive-article-date">
+  	<time datetime="2017-09-03T03:20:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2017/09/03/2017-09-03-homeTicket/">随笔 回家的车票8.28-9.03</a>
     </h1>
   
 
-        
-        <a href="/blog/2016/01/09/2016-01-09-iOS_OTA/" class="archive-article-date">
-  	<time datetime="2016-01-09T03:15:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>1、控件到 <code>window</code> 的层级关系:   </li>
-<li>2、分析控件的详细路径:</li>
-<li>3、动态修改控件:      </li>
-<li>4、工具篇:</li>
-</ul>
-<h3 id="视图的层级关系"><a href="#视图的层级关系" class="headerlink" title="视图的层级关系"></a>视图的层级关系</h3><p>每个 <code>App</code> , 至少有一个根 <code>Window</code> , 通常情况下我们只用一个 。<code>window</code> 有一个 <code>rootViewController</code> , 这就是我们所谓的根视图 , 我们所有的控制器都是放在 <code>rootViewController</code> 里面的。</p>
-<p>如果在项目里有了这么一个路径 , 我们可以做什么呢？   </p>
-<ul>
-<li>在当项目很复杂 , 可以其它地方可以直接修改这个控件的状态</li>
-<li>当某个控件命名存在却又没有显示出来 , 可以通过路径来辅助查找</li>
-<li>由服务器下发一些配置 , 使用 <code>Runtime</code> 去动态的修改已上线的项目</li>
-</ul>
-<p>下面将介绍如何使用代码来找出这些视图(控件)的路径</p>
-<h3 id="分析控件的详细路径"><a href="#分析控件的详细路径" class="headerlink" title="分析控件的详细路径"></a>分析控件的详细路径</h3><h4 id="1、找出根-Window"><a href="#1、找出根-Window" class="headerlink" title="1、找出根 Window :"></a>1、找出根 <code>Window</code> :</h4><p>每一个视图、控件 , 他们最终的根都是main函数返回的 <code>application</code> , 通过 <code>[UIApplication sharedApplication]</code> 可以得到 。 <code>application</code> 的 <code>windows</code> 属性是一个数组 , 这里面装的是这个应用的所有 <code>Window</code> , 我们通常用的是第一个也就是 <code>application.windows[0]</code><br><a id="more"></a> </p>
-<h4 id="2、遍历视图"><a href="#2、遍历视图" class="headerlink" title="2、遍历视图 :"></a>2、遍历视图 :</h4><p>得到了 <code>window</code> 对象一切都好办了 。 然后拿到 <code>window</code> 的 <code>rootViewController</code> , 在获取 <code>rootViewController</code> 里面所有的 <code>childViewControllers</code> 和 <code>view</code> 里的 <code>subviews</code> , 一直递归下去就可以得到当前屏幕里所有视图对象了 , 同时可以通过 <code>runtime</code> 把它们的 <code>property</code>、<code>delegate</code> 都获取出来。  </p>
-<p>结合 <code>Reveal</code> 或者 <code>Xcode</code> 自带的 <code>Captuer View Hiearachy</code> , 我们可以推测一下这两个的的实现原理了 :  </p>
-<p>1、根据应用得到根视图<br>2、递归获取里面的所有控件<br>3、按照他们的层级关系一层一层的画出来</p>
-<h3 id="动态修改控件"><a href="#动态修改控件" class="headerlink" title="动态修改控件"></a>动态修改控件</h3><p>1、把上面获取到的所有控件的详细信息上传到服务器 。<br>2、根据业务需求由服务器给我们下发对应的配置列表，以 <code>button</code> 为例 : 配置列表里必须要有 :    </p>
-<blockquote>
-<p>1)、<code>button</code> 的全路径 : 如 <code>UIWindow</code> -&gt; <code>UIWindow</code> -&gt; <code>UIView</code> -&gt; <code>UIView</code> -&gt; <code>UILayoutContainerView</code> -&gt; <code>UITabBar</code> -&gt; <code>UIView</code> —&gt; <code>UIButton</code>    </p>
-<p>2)、<code>button</code> 的唯一标识 : 如 <code>tag</code> 值或自己实现的一套算法生成的唯一标识 , 目的是防止与 <code>button</code> 同一层次的视图搞混 。  </p>
-<p>3)、 根据路径及唯一标识来匹配 <code>App</code> 里的控件 , 匹配和上面的查找原理是相通的。   </p>
-<p>4)、 匹配成功代表  <code>button</code> 确实存在 , 根据业务需求做后续操作 。   </p>
-<p>提示: 匹配策略尽可能的多 , 防止意外情况某一两个标识生成失败或者生成相同 。</p>
-</blockquote>
-<p>3、修改 <code>button</code> 的状态。</p>
-<blockquote>
-<p>1)、 如某个按钮点了会 <code>Crash</code> 或暂时不需要被点击 , 但是又要展示出来 , 可以直接修改 <code>button</code> 的 <code>enabled</code> 属性 。   </p>
-<p>2)、 如某业务暂时关闭 , 可以直接修改入口 <code>按钮</code> frame为0 , 前提是要自动布局已做好 。    </p>
-<p>3)、 如给购买 <code>按钮</code> 添加监听事件 <code>addTarget: action: forControlEvents:</code>     </p>
-<p><code>target</code> 也可以通过上面 <code>遍历视图</code> 获取到 , <code>action</code> 可以由服务器下发 , 也可以一开始就写死 , 等有需求的时候直接传不同的参数就行了 。  </p>
-</blockquote>
-<p>4、 绑定查找控件时 , 这个界面必须要已经初始化完成了才行 , 假如界面还没生成肯定是查找不到这个控件的 。 这里给大家提供两种思路 : </p>
-<blockquote>
-<p>1、使用Runtime <code>Method Swizzing</code> ,  直接把修改控件的方法与 <code>didMoveToSuperview</code> 和 <code>didMoveToWindow</code> 动态绑定 , 等这个控件加载出来之后再去修改 , 查找路径正确的话肯定就能找到了 。   </p>
-<p>2、在具体的类里面 , 等控件的初始化方法调用完后 , 再去执行动态修改 , 如在<code>viewDidLoad</code> 里面初始化控件 , 在 <code>viewWillAppear:</code> 里面动态修改 。  </p>
-<p>建议使用第一种适用范围更强 。</p>
-</blockquote>
-<p>上架后的 <code>应用</code> 可能会遇到的一些突发状况 , 未测出的<code>Crash</code>、临时改点小需求 , 等等 , 我们总不能每次因为一点小改动就重新提交一次 <code>App Store</code> , 先不说 <code>App Store</code> 的审核时间 , 频繁的让用户去更新应用 , 用户也会烦的 。使用这篇文章所讲的来实现动态更新是再合适不过了 。   </p>
-<p>首先上面讲的 <code>动态更新</code> 是完全脱离出来的一个模块 , 跟业务逻辑没有任何关系 , 只需要部署一次就行了 , 等开发下一个项目也可以直接拿过去使用 。这里的动态更新适用于局部的视图、控件的修改 , 如果你有其它需求可以考虑 <a href="https://github.com/bang590/JSPatch" target="_blank" rel="external">JSPatch</a> , 下发脚本也是一个不错的选择 。</p>
-<h3 id="工具篇"><a href="#工具篇" class="headerlink" title="工具篇"></a>工具篇</h3><p>使用一些UI调试的辅助工具 , 使我们查看视图在项目中得层次结构更为方便 。<br>常用的UI调试的工具：</p>
-<ul>
-<li>Captuer View Hiearachy</li>
-<li>Reveal</li>
-</ul>
-<p>Xcode自带的 <code>Captuer View Hiearachy</code> 实现步骤:  </p>
-<ul>
-<li>1、打开Xcode , 运行项目 , 选择最顶部的 <code>Debug</code></li>
-<li>2、<code>Debug</code> -&gt; <code>View Debugging</code> -&gt; <code>Show View Frames</code></li>
-<li>3、<code>Debug</code> -&gt; <code>View Debugging</code> -&gt; <code>Captuer View Hiearachy</code></li>
-</ul>
-<p>Xcode里面就变成了三维的视图了 , Xcode左侧展示出来的是层级关系的树状图 。</p>
-<p>Reveal的功能相对来说更强大 , 适用于UI调试视图查找 。使用方法请看 <a href="http://support.revealapp.com/kb/getting-started/reveal" target="_blank" rel="external">Reveal集成指南</a> 。</p>
-<p><br></p>
-<p>转载请注明：<a href="http://xiaoshenmao.github.io/blog" target="_blank" rel="external">xiaoshenmao的博客</a> » <a href="https://xiaoshenmao.github.io/blog/2016/01/09/2016-01-09-iOS_OTA/" target="_blank" rel="external">点击阅读原文</a>     </p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/blog/assets/img/alipayimg.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/blog/assets/img/weipayimg.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://xiaoshenmao.github.io/blog/2016/01/09/2016-01-09-iOS_OTA/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/blog/2016/04/02/2016-04-02-CocoaPod_Use/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CocoaPods使用心得
-        
-      </div>
-    </a>
   
   
-    <a href="/blog/2015/09/26/2015-09-26-iOS9_Note/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS 9 变化笔记</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!--//就是下面这一段代码-->
-
-<div id="box"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-  var gitment = new Gitment({
-    id: window.location.pathname,
-    owner: 'xiaoshenmao',
-    repo: 'blog',
-    oauth: {
-      client_id: 'cc78066e32dbd079c725',
-      client_secret: '53b5d6bffd0edd9f87a7664aa7409d0b622ec01b',
-    },
-  })
-  gitment.render('box')
-</script>
-
-
-
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -465,8 +270,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -173,6 +173,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2017-09-03-homeTicket" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/09/03/2017-09-03-homeTicket/">随笔 回家的车票8.28-9.03</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2017/09/03/2017-09-03-homeTicket/" class="archive-article-date">
+  	<time datetime="2017-09-03T03:20:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今年往返北京几次,没有一次终点站是家的。<br>列车路过武汉长江大桥,停靠在武汉站,万般不舍就想这样跳下车算了<br>什么需求,什么bug,都靠边站<br>念头持续了几秒,平静下来,笑笑自己。<br>“前方还有工作等着呢!” </p>
+        
+          <a class="article-more-a" href="/blog/2017/09/03/2017-09-03-homeTicket/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2017/09/03/2017-09-03-homeTicket/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+  
     <article id="post-2017-08-23TyphoonDay" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -734,88 +812,6 @@
 
 
   
-    <article id="post-2016-11-03-TensorFlowOniOSUse1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/11/03/2016-11-03-TensorFlowOniOSUse1/">TensorFlow 在 iOS 平台上的使用(一)</a>
-    </h1>
-  
-
-        
-        <a href="/blog/2016/11/03/2016-11-03-TensorFlowOniOSUse1/" class="archive-article-date">
-  	<time datetime="2016-11-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　距离上次使用 TensorFlow 在iOS平台上做的小 Demo，已经过了四个月了，今天忽然想再看看,发现 Demo 已经不见了，我只能从头在编一次，这次发现编译 iOS 库，简单多了。</p>
-<p>　　tensorflow <a href="https://github.com/tensorflow/tensorflow/archive/master.zip" target="_blank" rel="external">下载地址</a>，tensorflow 最近提交的时间：2016-11-03，commit：<code>7b7c02de56e013482b5fe5ab05e576dc98fe5742</code> 。</p>
-<p>　　下载完成后打开文件，找到目录 <code>tensorflow-master/tensorflow/contrib/ios_examples</code> 你会发现目录下有三个项目和一个 README.md 。</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">benchmark 、 camera 、<span class="built_in"> simple </span>、README.md</div></pre></td></tr></table></figure>
-<h3 id="如果你发现项目无法运行，请看这里"><a href="#如果你发现项目无法运行，请看这里" class="headerlink" title="如果你发现项目无法运行，请看这里"></a>如果你发现项目无法运行，请看这里</h3><p>　　对于任何项目我们首先打开的应该是 README.md ，里面一般情况都会有介绍如何使用这个项目，tensorflow 也不会例外。README 开头就说了，这个目录里有如何在 iOS 平台上使用 tensorflow 的例子，但是需要注意几点：</p>
-<ul>
-<li>你的 Xcode 版本必须是 7.3 或更高版本，并且有安装 command-line 工具 。</li>
-<li>项目(Examples) 里必须包含一个静态库：<code>libtensorflow-core.a</code> 。</li>
-<li>下载 <a href="https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip" target="_blank" rel="external">Inception v1</a>，解压后将 label 和 graph 放在 simple 和 camera 的项目中。
-        
-          <a class="article-more-a" href="/blog/2016/11/03/2016-11-03-TensorFlowOniOSUse1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2016/11/03/2016-11-03-TensorFlowOniOSUse1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
@@ -944,19 +940,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">心情</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
             
             <div class="clearfix"></div>
